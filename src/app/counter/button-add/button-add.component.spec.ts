@@ -7,12 +7,7 @@ describe('ButtonAddComponent', () => {
   let fixture: ComponentFixture<ButtonAddComponent>;
 
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ButtonAddComponent]
-    })
-    .compileComponents();
-    
-    fixture = TestBed.createComponent(ButtonAddComponent);
+      fixture = TestBed.createComponent(ButtonAddComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -20,4 +15,18 @@ describe('ButtonAddComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+it("Debe emitir el valor de 1", () => {
+//console.log(component.contador)
+let nuevoContador = 0
+component.onAdd.subscribe(contador =>{
+
+nuevoContador = contador
+})
+component.add()
+
+expect(nuevoContador).toBe(1)
+
+
+});
 });

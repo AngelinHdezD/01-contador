@@ -8,7 +8,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class ButtonAddComponent {
 
   @Input()
-  contador: number=0;
+  contador: number=23;
  
   @Output() onAdd: EventEmitter<number>= new EventEmitter()
   
